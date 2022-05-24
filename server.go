@@ -96,9 +96,9 @@ func receiveCodeViaLocalServer(ctx context.Context, c *Config) (string, error) {
 func computeRedirectURL(l net.Listener, c *Config) string {
 	hostPort := fmt.Sprintf("%s:%d", c.RedirectURLHostname, l.Addr().(*net.TCPAddr).Port)
 	if c.LocalServerCertFile != "" {
-		return "https://" + hostPort
+		return "https://" + hostPort + c.RedirectURLPath
 	}
-	return "http://" + hostPort
+	return "http://" + hostPort + c.RedirectURLPath
 }
 
 type authorizationResponse struct {

@@ -56,6 +56,9 @@ type Config struct {
 	// You can set this if your provider does not accept localhost.
 	// Default to localhost.
 	RedirectURLHostname string
+	// URL path of the redirection
+	// It is a string starting with "/" or empty
+	RedirectURLPath string
 	// Options for an authorization request.
 	// You can set oauth2.AccessTypeOffline and the PKCE options here.
 	AuthCodeOptions []oauth2.AuthCodeOption
